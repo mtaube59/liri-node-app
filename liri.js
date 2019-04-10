@@ -31,6 +31,9 @@ console.log(input);
 //look at not inputting a string//
 function liri() {
     if (command === "spotify-this-song") {
+        if (input === ""){
+            input = "The Sign"
+        }
         console.log("spotify-this-song");
         spotify.search({ type: 'track', query: input, limit: 1 }, function (err, data) {
             if (err) {
@@ -45,6 +48,9 @@ function liri() {
         });
     }
     else if (command === "movie-this") {
+        if (input === ""){
+            input = "Mr Nobody"
+        }
         //    * Title of the movie.
         //    * Year the movie came out.
         //    * IMDB Rating of the movie.
